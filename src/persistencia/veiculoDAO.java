@@ -37,7 +37,6 @@ public class veiculoDAO {
         ps.execute();
         cnn.close();
         
-        
     }
      public ArrayList<Veiculo> listar() throws SQLException {
         String sql = "SELECT * FROM tipoassociado WHERE codigo = ?;";
