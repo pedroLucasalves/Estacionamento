@@ -13,8 +13,35 @@ import java.util.Date;
  */
 public class Estacionamento {
 
+    private int codigo;
+    private String idVeiculo;
     private Date dataHoraDeEntrada;
     private Date dataHoraDeSaida;
+    private double valor;
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getIdVeiculo() {
+        return idVeiculo;
+    }
+
+    public void setIdVeiculo(String idVeiculo) {
+        this.idVeiculo = idVeiculo;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 
     public Date getdataHoraDeEntrada() {
         return dataHoraDeEntrada;
@@ -31,10 +58,11 @@ public class Estacionamento {
     public void setdataHoraDeSaida(Date hrDeSaida) {
         this.dataHoraDeSaida = hrDeSaida;
     }
-    public Double calcularValor(){
+
+    public Double calcularValor() {
         Date dataAtual = new Date();
         long dif = dataAtual.getTime() - dataHoraDeEntrada.getTime();
-        long difHours = dif / (60 * 60 * 1000)%24;
+        long difHours = dif / (60 * 60 * 1000) % 24;
         return difHours * 6.0;
     }
 }

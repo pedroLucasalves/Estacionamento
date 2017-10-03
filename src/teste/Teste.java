@@ -5,8 +5,11 @@
  */
 package teste;
 
+import classededados.Estacionamento;
 import classededados.Veiculo;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import persistencia.veiculoDAO;
 
 /**
@@ -14,14 +17,30 @@ import persistencia.veiculoDAO;
  * @author Pedro
  */
 public class Teste {
-    public static void main(String [] args) throws SQLException, Exception{
+
+    public static void main(String[] args) throws SQLException, Exception {
         Veiculo inclui = new Veiculo();
         veiculoDAO per = new veiculoDAO();
+        Estacionamento est = new Estacionamento();
+
+        java.sql.Date data = null;
+        java.util.Date dataUtil = new java.util.Date();
+        java.sql.Date dataSql = new java.sql.Date(dataUtil.getTime());
+
+//        Date data2 = new Date();
+//        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+//        formatador.format("22/02/2017");
+
+        est.setIdVeiculo("XXX-1233");
+        est.setValor(6);
         
-        //incluir na tabela
-        inclui.setPlaca("xxx-0000");
-        inclui.setMarca("marca");
-        inclui.setModelo("modelo");
-        per.incluir(inclui);
+        //est.setdataHoraDeEntrada(dataSql);
+        //        //incluir na tabela
+        ////        inclui.setPlaca("xxx-0000");
+        //        inclui.setMarca("marca");
+        //        inclui.setModelo("modelo");
+              //  per.incluir(inclui);
+
+        //inclui
     }
 }
